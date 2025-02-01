@@ -2,7 +2,8 @@ import os
 
 import requests
 import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+from vk_api.bot_longpoll import VkBotEventType, VkBotLongPoll
+
 from settings import Settings, get_settings
 
 settings: Settings = get_settings()
@@ -12,8 +13,8 @@ def download_image(url: str) -> str | None:
     """Скачивает изображение по URL и возвращает путь к сохраненному файлу."""
     response = requests.get(url)
     if response.status_code == 200:
-        file_path = 'temp_image.jpg'
-        with open(file_path, 'wb') as f:
+        file_path = "temp_image.jpg"
+        with open(file_path, "wb") as f:
             f.write(response.content)
         return file_path
 
@@ -41,6 +42,7 @@ def main():
                                 user_id=user_id,
                                 attachment=f'photo{photo["owner_id"]}_{photo["id"]}',
                                 random_id=0,
+                                reply_to=event.message.id,
                             )
                             os.remove(temp_path)
 

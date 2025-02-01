@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     """Application settings"""
+
     VK_API_TOKEN: str
     VK_GROUP_ID: int
     model_config = SettingsConfigDict(
