@@ -19,7 +19,6 @@ cd vk_bot
 
 ```bash
 pip install -r requirements.txt
-text
 ```
 
 ### 3. Получение токена и ID группы
