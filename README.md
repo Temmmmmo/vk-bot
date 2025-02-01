@@ -9,7 +9,7 @@
 Сначала клонируйте репозиторий на ваш компьютер:
 
 ```bash
-git clone https://github.com/Temmmmmo/vk_bot.git
+git clone https://github.com/Temmmmmo/vk-bot.git
 cd vk_bot
 ```
 
